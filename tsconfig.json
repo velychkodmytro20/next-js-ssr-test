@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "downlevelIteration": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -14,15 +15,40 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "allowSyntheticDefaultImports": true,
     "plugins": [
       {
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@assets/*": ["assets/*"],
+      "@auth/*": ["app/(auth)/*"],
+      "@common/*": ["components/common/*"],
+      "@constants": ["constants"],
+      "@controllers": ["controllers"],
+      "@components/*": ["components/*"],
+      "@dictionaries/*": ["dictionaries/*"],
+      "@helpers": ["helpers"],
+      "@interfaces": ["interfaces"],
+      "@lib/*": ["lib/*"],
+      "react": ["./node_modules/@types/react"],
+      "@services/*": ["services/*"],
+      "@services": ["services"],
+      "@site/*": ["app/(site)/*"],
+      "@styles/*": ["styles/*"],
+      "@store": ["store"],
+      "@types/*": ["types/*"],
+      "@utils": ["utils"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "dictionaries/index.ts"
+  ],
   "exclude": ["node_modules"]
 }

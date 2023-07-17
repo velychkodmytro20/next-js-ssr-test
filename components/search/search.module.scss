@@ -1,0 +1,119 @@
+.root {
+  @apply relative z-50 w-full;
+  &:hover {
+    .inputContainer {
+      @apply border-0 brightness-95 transition duration-300;
+    }
+  }
+  &.active {
+    .inputContainer {
+      @apply brightness-95;
+    }
+    .input {
+      @apply border  border-[var(--pale-black)];
+    }
+  }
+  .popoverButton {
+    @apply p-1.5;
+  }
+}
+
+.inputWrap {
+  @apply relative z-10;
+}
+
+.overlay {
+  @apply fixed bottom-0 left-0 right-0 top-0 h-full w-full;
+}
+.overlayHidden {
+  @apply hidden;
+}
+
+.inputContainer {
+  .input {
+    @apply rounded-10 border border-transparent bg-gray-new py-1 pe-14 ps-14 font-medium shadow-none transition-opacity focus:ring-0 focus-visible:outline-0;
+    @apply py-2 text-sm leading-4 text-black;
+    &:hover {
+      @apply border-[var(--pale-black)];
+    }
+    &:focus {
+      @apply border;
+    }
+    &::placeholder {
+      color: var(--black) !important;
+    }
+  }
+
+  .inputIconLeft {
+    @apply start-3.5;
+  }
+
+  .inputIconRight {
+    @apply end-3.5;
+  }
+
+  .inputButton {
+    @apply p-1.5;
+    &:hover {
+      path {
+        @apply fill-active;
+      }
+    }
+  }
+
+  .inputIcon {
+    path {
+      @apply fill-black;
+    }
+  }
+}
+
+.container {
+  @apply absolute left-0 top-0 grid w-full gap-y-9 rounded-default bg-white px-10 pb-11 pt-14 drop-shadow-[0px_5px_15px_rgba(0,0,0,0.29)]; // shadow-[0_1px_2px_rgba(0,0,0,0.05)]
+}
+
+.iconArrow {
+  @apply -rotate-90 transition duration-300;
+  &IsOpen {
+    @apply rotate-0;
+    path {
+      @apply fill-active;
+    }
+  }
+}
+
+.title {
+  @apply mb-3 text-xs font-medium leading-4 text-black;
+}
+
+.button {
+  @apply hover:bg-active hover:text-white;
+}
+
+.blockAction {
+  @apply ml-auto;
+}
+
+.block {
+  @apply flex flex-col;
+}
+
+.blockWrap {
+  @apply flex items-end;
+}
+
+.blockInputs {
+  @apply grid gap-2.5;
+}
+
+.blockInputsRubrics {
+  @apply grid-flow-col grid-rows-6;
+}
+
+.blockInputsWhereToLook {
+  @apply grid-flow-col grid-rows-2;
+}
+
+.blockContent {
+  @apply mr-16 last:mr-0;
+}

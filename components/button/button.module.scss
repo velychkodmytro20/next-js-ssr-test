@@ -1,0 +1,16 @@
+.root {
+  @apply rounded-10 bg-active px-5 py-3 text-sm font-medium leading-4 text-white;
+  &.outline {
+    @apply border border-active bg-transparent text-black;
+  }
+  &[disabled] {
+    @apply bg-gray text-white;
+  }
+}
+
+.colorGrey {
+  @apply bg-primary-2 text-black;
+  &.outline {
+    @apply border border-black bg-transparent;
+  }
+}
